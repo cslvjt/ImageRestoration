@@ -92,7 +92,7 @@ class BaseTrainer():
             #                                              restart_weights=self.opt["train"]["scheduler"]["restart_weights"],
             #                                              eta_min=self.opt["train"]["scheduler"]["eta_min"])
             self.lr_scheduler = CosineAnnealingLR(self.optimizer,
-                                                  T_max=self.opt["train"]["iters"] * 2,
+                                                  T_max=self.opt["train"]["iters"] * self.accelerator.num_processes,
                                                   eta_min=self.opt["train"]["scheduler"]["eta_min"])
         else:
             raise NotImplementedError(f'Scheduler {scheduler_name} is not implemented yet.')

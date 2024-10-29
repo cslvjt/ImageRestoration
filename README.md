@@ -1,5 +1,7 @@
 # 仓库简介
 使用accelerate训练图像视频复原相关的代码
+# TODO
++ [] ： 加入进度条
 # 环境配置
 """
 pip install -r requirements.txt
